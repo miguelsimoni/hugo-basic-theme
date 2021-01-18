@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+
+  <p>
+    {{ .Content }}
+  </p>
+
+  {{ T "by" }} <em>{{ if .Params.Author }}{{ .Params.Author }}{{ else }}{{ .Site.Params.Author }}{{ end }}</em>
+</article>
+
+<hr>
+
+<aside id="meta">
+  <time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.dateFormat }}</time>
+  |
+  <span id="readingtime">{{ T "readingTime" .ReadingTime }}</span>
+
+  {{ with .Params.tags }}
+  <ul>
+    {{ range . }}
+      <li>
+        <a href="{{ "tags/" | absURL }}{{ . | urlize }}" rel="tag">
+          <span>{{ . }}</span>
+        </a>
+      </li>
+    {{ end }}
+    </ul>
+  {{ end }}
+
+  <!-- Sharing options -->
+
+  <!-- Comments -->
+  <section id="comments">
+    {{ template "_internal/disqus.html" . }}
+    {{ partial "disqus.html" . }}
+  </section>
+
+  <!-- Article navigation -->
+  {{ with .PrevInSection }}
+  <button href="{{ .Permalink | absLangURL }}" rel="prev">
+    &#8592; {{ .Title }}
+  </button>
+  {{ end }}
+
+  <button href="{{ "/" | absLangURL }}">{{ T "goHome" }}</button>
+
+  {{ with .NextInSection }}
+  <button href="{{ .Permalink | absLangURL }}" rel="next">
+    {{ .Title }} &#8594;
+  </button>
+  {{ end }}
+
+</aside>
+{{ end }}

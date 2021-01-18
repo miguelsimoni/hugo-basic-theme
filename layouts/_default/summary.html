@@ -1,0 +1,15 @@
+{{ with .Page }}
+
+  <h2>{{ .Title }}</h2>
+
+  <small>
+    {{ .Date.Format .Site.Params.dateFormat }} | {{ T "readingTime" .ReadingTime }}
+  </small>
+
+  <p>
+    {{ .Summary }}
+  </p>
+
+  <a href="{{ .Permalink }}">{{ T "readMore" . }}</a>
+
+{{ end }}

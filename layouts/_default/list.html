@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+  {{ .Render "section-header" }}
+
+  <!-- Ranges through content/posts/*.md -->
+  {{ range .Paginator.Pages }}
+    <article>
+      {{ .Render "summary" }}
+    </article>
+  {{ end }}
+
+  {{ template "_internal/pagination.html" . }}
+
+{{ end }}

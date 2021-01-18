@@ -1,0 +1,5 @@
+<footer>
+  {{ T "copyright" }} &copy; {{ .Site.Params.copyrightYear }}-<script>document.write(new Date().getFullYear());</script> - {{ .Site.Title }}
+</footer>
+
+{{- partial "footer/scripts.html" . -}}
