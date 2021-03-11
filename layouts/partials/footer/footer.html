@@ -1,5 +1,5 @@
 <footer>
-  {{ T "copyright" }} &copy; {{ .Site.Params.copyrightYear }}-<script>document.write(new Date().getFullYear());</script> - {{ .Site.Title }}
+  {{ T "copyright" }} &copy; {{ .Site.Params.copyright.sinceYear }}-{{ now.Year }} - {{ .Site.Params.copyright.owner }}
 </footer>
 
 {{- partial "footer/scripts.html" . -}}
