@@ -10,6 +10,6 @@
     {{ .Summary }}
   </p>
 
-  <a href="{{ .Permalink }}">{{ T "readMore" . }}</a>
+  <a href="{{ .Permalink | absLangURL }}">{{ T "readMore" . }}</a>
 
 {{ end }}
