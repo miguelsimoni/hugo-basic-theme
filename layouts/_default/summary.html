@@ -3,13 +3,13 @@
   <h2>{{ .Title }}</h2>
 
   <small>
-    {{ .Date.Format .Site.Params.dateFormat }} | {{ T "readingTime" .ReadingTime }}
+    {{ .Date.Format .Site.Params.dateFormat }} | {{ T "reading_time" .ReadingTime }}
   </small>
 
   <p>
     {{ .Summary }}
   </p>
 
-  <a href="{{ .Permalink | absLangURL }}">{{ T "readMore" . }}</a>
+  <a href="{{ .Permalink | absLangURL }}">{{ T "read_more" . }}</a>
 
 {{ end }}

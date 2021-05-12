@@ -3,9 +3,9 @@
 
 name = "Hugo Basic Theme"
 license = "MIT"
-licenselink = "https://github.com/miguelsimoni/hugo-basic-theme/blob/master/LICENSE"
+licenselink = "https://github.com/miguelsimoni/hugo-basic-theme/blob/main/LICENSE"
 description = "Basic theme for Hugo"
-homepage = "https://miguelsimoni.xyz/hugo-basic-theme"
+homepage = "https://miguelsimoni.github.io/hugo-basic-theme"
 tags = []
 features = []
 min_version = "0.41.0"

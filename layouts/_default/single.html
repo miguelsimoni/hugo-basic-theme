@@ -14,13 +14,13 @@
 <aside id="meta">
   <time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.dateFormat }}</time>
   |
-  <span id="readingtime">{{ T "readingTime" .ReadingTime }}</span>
+  <span id="readingtime">{{ T "reading_time" .ReadingTime }}</span>
 
   {{ with .Params.tags }}
   <ul>
     {{ range . }}
       <li>
-        <a href="{{ "tags/" | absURL }}{{ . | urlize }}" rel="tag">
+        <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}" rel="tag">
           <span>{{ . }}</span>
         </a>
       </li>
@@ -43,7 +43,7 @@
   </button>
   {{ end }}
 
-  <button href="{{ "/" | absLangURL }}">{{ T "goHome" }}</button>
+  <button href="{{ .Site.BaseURL | absLangURL }}">{{ T "go_home" }}</button>
 
   {{ with .NextInSection }}
   <button href="{{ .Permalink | absLangURL }}" rel="next">
