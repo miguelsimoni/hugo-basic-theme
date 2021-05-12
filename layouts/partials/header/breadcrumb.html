@@ -1,7 +1,7 @@
 <nav>
-  <ol class="breadcrumb">
+  <div class="breadcrumb">
     {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-  </ol>
+  </div>
 </nav>
 
 {{ define "breadcrumbnav" }}
@@ -11,10 +11,11 @@
     {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
   {{ end }}
   {{ if eq .p1 .p2 }}
-    <li class="active">{{ .p1.Title }}</li>
+    <span class="active">{{ .p1.Title }}</span>
   {{ else }}
-    <li>
+    <span>
       <a href="{{ .p1.Permalink | absLangURL }}">{{ .p1.Title }}</a>
-    </li>
+    </span>
+    <span>/</span>
   {{ end }}
 {{ end }}
