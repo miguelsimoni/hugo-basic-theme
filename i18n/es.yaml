@@ -12,6 +12,12 @@ reading_time:
   one: ~Un minuto
   other: "~{{ .Count }} minutos"
 
+load_more:
+  other: "Cargar más..."
+
+loading:
+  other: Cargando...
+
 read_more:
   other: Leer más...
 
