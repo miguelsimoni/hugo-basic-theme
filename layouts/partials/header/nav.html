@@ -27,10 +27,12 @@
           </li>
         {{ end }}
       {{ end }}
+      {{ if .Site.Params.languagesMenuEnabled }}
       <li>
         {{ T "language" . }}
         {{ partial "languages.html" . }}
       </li>
+      {{ end }}
     </ul>
   </nav>
 </aside>

@@ -1,6 +1,6 @@
 <nav>
   <div class="breadcrumb">
-    {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+    {{ template "breadcrumbnav" (dict "p1" . "p2" . "showCurrent" .Site.Params.breadcrumb.showCurrent) }}
   </div>
 </nav>
 
@@ -11,7 +11,9 @@
     {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 ) }}
   {{ end }}
   {{ if eq .p1 .p2 }}
+    {{ if .showCurrent }}
     <span class="active">{{ .p1.Title }}</span>
+    {{ end }}
   {{ else }}
     <span>
       <a href="{{ .p1.Permalink | absLangURL }}">{{ .p1.Title }}</a>

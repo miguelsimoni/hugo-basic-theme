@@ -12,7 +12,7 @@
 <hr>
 
 <aside id="meta">
-  <time datetime="{{ .Date }}">{{ .Date.Format .Site.Params.dateFormat }}</time>
+  <time datetime="{{ .Date }}">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }}</time>
   |
   <span id="readingtime">{{ T "reading_time" .ReadingTime }}</span>
 

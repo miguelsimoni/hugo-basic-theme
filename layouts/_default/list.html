@@ -10,12 +10,12 @@
       </article>
     {{ end }}
 
-    {{ if .Site.Params.pagination.loadMore }}
+    {{ if .Site.Params.pagination.loader }}
       {{ if $paginator.HasNext }}
-      <div id="loadMore">
+      <div id="loader">
         <br>
         <button type="button"
-                onclick="loadMoreHandler({{ .RelPermalink | relLangURL }},{{ add 1 $paginator.PageNumber }})">
+                onclick="loaderHandler({{ .Permalink }},{{ add 1 $paginator.PageNumber }})">
           <span>{{ T "load_more" }}</span>
           <span class="hidden">{{ T "loading" }}</span>
         </button>
