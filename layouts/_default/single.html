@@ -20,7 +20,7 @@
   <ul>
     {{ range . }}
       <li>
-        <a href="{{ "/tags/" | absLangURL }}{{ . | urlize }}" rel="tag">
+        <a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" rel="tag">
           <span>{{ . }}</span>
         </a>
       </li>
