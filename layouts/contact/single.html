@@ -1,0 +1,41 @@
+{{ define "main"}}
+
+<section id="contact">
+  <form action="{{ .Site.Params.contact.formAction }}" method="POST">
+  
+    <label for="name">{{ T "contact_name" }}</label>
+    <br>
+    <input type="text" id="name" name="name" placeholder="{{ T "contact_name" }}" title="{{ T "contact_name" }}" 
+           pattern="{{ .Site.Params.contact.validation.namePattern }}" required>
+    <br>
+  
+    <label for="email">{{ T "contact_email" }}</label>
+    <br>
+    <input type="email" id="email" name="email" placeholder="{{ T "contact_email" }}" title="{{ T "contact_email" }}" 
+           pattern="{{ .Site.Params.contact.validation.emailPattern }}" required>
+    <br>
+
+    <label for="message">{{ T "contact_message" }}</label>
+    <br>
+    <textarea id="message" name="message" placeholder="{{ T "contact_message" }}" title="{{ T "contact_message" }}" 
+              required></textarea>
+    <br>
+
+    <button type="submit">
+      <span>{{ T "send" }}</span>
+      <span class="hidden">{{ T "sending" }}</span>
+    </button>
+
+    <input type="hidden" name="subject" value="{{ T "contact_subject" }}" />
+    <input type="hidden" name="language" value="{{ .Site.LanguageCode }}" />
+
+  </form>
+</section>
+
+<section id="thanks" class="hidden">
+  <h1>{{ T "thanks" }}</h1>
+  <p>{{ T "thanks_message" }}</p>
+  <a href="{{ .Site.BaseURL | relLangURL }}">{{ T "go_home" }}</a>
+</section>
+
+{{ end }}
