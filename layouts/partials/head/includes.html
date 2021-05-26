@@ -1,2 +1,2 @@
-{{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
+{{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ExecuteAsTemplate "css/bundle.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
