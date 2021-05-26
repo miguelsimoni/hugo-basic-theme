@@ -1,6 +1,8 @@
 {{ with .Page }}
 
-  <h2>{{ .Title }}</h2>
+  <a href="{{ .Permalink | absLangURL }}">
+    <h2>{{ .Title }}</h2>
+  </a>
 
   <small>
     {{ .Date.Format (.Site.Params.dateFormat | default "Jan 2, 2006") }} | {{ T "reading_time" .ReadingTime }}

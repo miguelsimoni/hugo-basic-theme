@@ -28,6 +28,8 @@
     </ul>
   {{ end }}
 
+  <br>
+
   <!-- Sharing options -->
 
   <!-- Comments -->
@@ -36,19 +38,21 @@
     {{ partial "disqus.html" . }}
   </section>
 
+  <br>
+
   <!-- Article navigation -->
   {{ with .PrevInSection }}
-  <button href="{{ .Permalink | absLangURL }}" rel="prev">
+  <a href="{{ .Permalink | absLangURL }}" rel="prev">
     &#8592; {{ .Title }}
-  </button>
+  </a>
   {{ end }}
-
-  <button href="{{ .Site.BaseURL | absLangURL }}">{{ T "go_home" }}</button>
-
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="{{ .Site.BaseURL | absLangURL }}" rel="home">{{ T "go_home" }}</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
   {{ with .NextInSection }}
-  <button href="{{ .Permalink | absLangURL }}" rel="next">
+  <a href="{{ .Permalink | absLangURL }}" rel="next">
     {{ .Title }} &#8594;
-  </button>
+  </a>
   {{ end }}
 
 </aside>

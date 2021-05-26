@@ -1,8 +1,37 @@
-.hidden {
-  display: none;
+body {
+  margin: 40px;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+  margin: 0 4px 0 4px;
+}
+
+nav li > ul {
+  display: inline;
 }
 
 .pagination li{
   display: inline;
   // list-style-type: none;
+}
+
+a[rel="next"] {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
