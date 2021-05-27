@@ -20,6 +20,11 @@
           <span class="hidden">{{ T "loading" }}</span>
         </button>
       </div>
+      {{ else }}
+      <div>
+        <br>
+        <a href="{{ "" | absLangURL }}" rel="home">{{ T "go_home" }}</a>
+      </div>
       {{ end }}
     {{ else }}
       {{ template "_internal/pagination.html" . }}

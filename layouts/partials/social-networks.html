@@ -1,0 +1,9 @@
+{{ if .Site.Params.social }}
+  <hr>
+  <div id="social-networks">
+  {{ range $index, $item := .Site.Params.social }}
+    {{ if $index }}&nbsp;&nbsp;|&nbsp;&nbsp;{{ end }}
+    <a href="{{ .link }}" alt="{{ .network }}">{{ .network }}</a>
+  {{ end }}
+  </div>
+{{ end }}

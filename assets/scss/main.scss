@@ -4,7 +4,7 @@ body {
   margin: 40px;
 }
 
-h1 {
+h1.title {
   text-align: center;
 }
 
@@ -36,4 +36,8 @@ footer {
 
 .hidden {
   display: none;
+}
+
+#social-networks {
+  text-align: center;
 }
