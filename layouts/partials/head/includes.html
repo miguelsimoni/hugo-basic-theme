@@ -1,2 +1,8 @@
+<!-- Site CSS -->
+{{ if hugo.IsProduction }}
 {{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ExecuteAsTemplate "css/bundle.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint "sha512" }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ else }}
+{{ $css := resources.Match "scss/**.scss" | resources.Concat "css/bundle.scss" | resources.ExecuteAsTemplate "css/bundle.scss" . | resources.ToCSS | resources.Fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}

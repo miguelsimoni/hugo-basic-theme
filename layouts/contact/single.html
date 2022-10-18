@@ -1,18 +1,18 @@
 {{ define "main"}}
 
 <section id="contact">
-  <form action="{{ .Site.Params.contact.formAction }}" method="POST">
+  <form action="{{ .Site.Params.form.contact.action }}" method="POST">
   
     <label for="name">{{ T "contact_name" }}</label>
     <br>
     <input type="text" id="name" name="name" placeholder="{{ T "contact_name" }}" title="{{ T "contact_name" }}" 
-           pattern="{{ .Site.Params.contact.validation.namePattern }}" required>
+           pattern="{{ .Site.Params.form.validation.namePattern }}" required>
     <br>
   
     <label for="email">{{ T "contact_email" }}</label>
     <br>
     <input type="email" id="email" name="email" placeholder="{{ T "contact_email" }}" title="{{ T "contact_email" }}" 
-           pattern="{{ .Site.Params.contact.validation.emailPattern }}" required>
+           pattern="{{ .Site.Params.form.validation.emailPattern }}" required>
     <br>
 
     <label for="message">{{ T "contact_message" }}</label>
@@ -21,12 +21,16 @@
               rows="5" required></textarea>
     <br>
 
+    {{ if .Site.Params.form.recaptcha.v2.siteKey }}
+    <div class="g-recaptcha" data-sitekey="{{ .Site.Params.form.recaptcha.v2.siteKey }}"></div>
+    {{ end }}
+
     <button type="submit">
       <span>{{ T "send" }}</span>
       <span class="hidden">{{ T "sending" }}</span>
     </button>
 
-    <input type="hidden" name="subject" value="{{ T "contact_subject" }}" />
+    {{/*  <input type="hidden" name="subject" value="{{ T "contact_subject" }}" />  */}}
     <input type="hidden" name="language" value="{{ .Site.Language.Lang }}" />
 
   </form>

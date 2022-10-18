@@ -8,10 +8,12 @@ function loaderHandler(baseURL, pageNumber) {
     if (this.readyState == 4 && this.status == 200) {
       document.querySelector("#loader").remove();
 
-      var re = document.createElement('div');
+      var re = document.createElement("div");
       re.innerHTML = this.responseText;
       var nextPageContent = re.querySelector("#posts").innerHTML;
-      document.querySelector("#posts").insertAdjacentHTML("beforeend", nextPageContent);
+      document
+        .querySelector("#posts")
+        .insertAdjacentHTML("beforeend", nextPageContent);
     }
   };
 
